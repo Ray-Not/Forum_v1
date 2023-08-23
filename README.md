@@ -1,10 +1,19 @@
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Ray-Not)
 
 ## Install on windows
+### Create & activate virtual environment
 ```
 python -m venv env
+```
+```
 source venv/Scripts/Activate
+```
+### Set all requirenments
+```
 pip install -r requirements.txt
+```
+### Run server
+```
 python forum_v1/manage.py runserver 0.0.0.0:80
 ```
 
