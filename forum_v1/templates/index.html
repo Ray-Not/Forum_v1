@@ -1,9 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My Django App</title>
-</head>
+    <head>    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fav icons -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="icon" href="{% static 'images/fav/favicon.ico' %}" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/fav/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/fav/favicon-16x16.png' %}">
+        <title>Title from index.html</title>
+        </head>
 <body>
+    {% include 'includes/header.html' %}
     <h1>Welcome to My Django App!</h1>
     
     <p>This is the homepage of our Django application.</p>
