@@ -11,26 +11,17 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav/apple-touch-icon.png' %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/fav/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/fav/favicon-16x16.png' %}">
-        <title>Title from index.html</title>
+        <title>
+            {% block title %}
+            Title from base
+            {% endblock title %}
+        </title>
         </head>
 <body>
     {% include 'includes/header.html' %}
-    
-    <div class="card text-center m-3">
-        <div class="card-header">
-          Обновление
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Новая роль: ликвидатор</h5>
-          <p class="card-text">
-            Content
-          </p>
-        </div>
-        <div class="card-footer text-muted">
-          21.01.2023
-        </div>
-      </div>
-
+    {% block content %}
+    CONTENT
+    {% endblock content %}
     {% include 'includes/footer.html' %}
 </body>
 </html>

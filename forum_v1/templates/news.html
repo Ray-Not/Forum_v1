@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Новости проекта
+{% endblock title %}
+
+{% block content %}
+{% for new in news %}
+    <div class="card text-center m-3">
+        <div class="card-header">
+          {{ new.type }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ new.title }}</h5>
+          <p class="card-text text-break">
+            {{ new.content|safe }}
+          </p>
+        </div>
+        <div class="card-footer text-muted">
+          <div class="position-relative">
+            <div class="position-absolute end-0 text-danger">{{ new.author.username }}</div>
+            <div class="text-center">{{ new.date }}</div>
+          </div>
+        </div>
+      </div>
+      {% if forloop.last %}<div style="height: 300px;"></div>{% endif %}
+      {% endfor %}
+{% endblock content %}
