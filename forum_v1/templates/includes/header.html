@@ -16,7 +16,7 @@
       </ul>
     </div>
     <div class="col-md-4 col-xs-1 d-flex justify-content-center align-items-center">
-      {% if not user.is_authorized %}
+      {% if user.is_authorized %}
       <button type="button" class="btn btn-outline-light me-3">Профиль</button>
       <img src="{% static 'images/ava.jpeg' %}" style="max-width: 75px; max-height: 75px;">
       {% else %}

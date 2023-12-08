@@ -3,14 +3,13 @@ from users.models import User
 from django.utils import timezone
 
 class News(models.Model):
-    type = models.CharField(max_length=64)
-    title = models.CharField(max_length=256)
-    content = models.TextField()
+    title = models.CharField(max_length=30)
+    content = models.TextField(max_length=530)
     date = models.DateField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='news_images')
 
     def __str__(self):
-        return f'[{self.type}] ' + self.title + ' by ' + self.author.username
+        return self.title
 
     class Meta:
         verbose_name = 'Новость'

@@ -6,26 +6,28 @@
 {% endblock title %}
 
 {% block content %}
-{% for new in news %}
-    <div class="card text-center m-3">
-        <div class="card-header">
-          {{ new.type }}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ new.title }}</h5>
-          <p class="card-text text-break">
-            {{ new.content|safe }}
-          </p>
-        </div>
-        <div class="card-footer text-muted">
-          <div class="position-relative">
-            <div class="position-absolute end-0 text-danger">{{ new.author.username }}</div>
-            <div class="text-center">{{ new.date }}</div>
-          </div>
-        </div>
+<div class="container">
+  <div class="row m-4 d-flex justify-content-center align-items-center" style="position: relative;">
+    {% for new in news %}
+    <div class="col-3 p-3 m-2" style="background-color: rgba(0, 0, 0, 0.7);">
+      <div class="row d-flex justify-content-center align-items-center">
+        <img src="{{ new.image.url }}" class="img-fluid" style="width: 300px; height: 310px; object-fit: cover;">
       </div>
-      {% if forloop.last %}
-      {% include 'includes/paginator.html' %}</div>
+      <div class="row text-white d-flex align-items-center p-3 text-wrap" style="height: 200px;">
+        <p style="font-family: noto-serif-bold, Georgia, serif; color: #dc005d;">
+          {{ new.title }}
+        </p>
+        <p style="font-family: noto-sans-regular, Helvetica, sans-serif; font-size: 10px;">
+          {{ new.content }}
+        </p>
+      </div>
+    </div>
+    {% if forloop.last %}
+      {% include 'includes/paginator.html' %}
       {% endif %}
-      {% endfor %}
+  {% endfor %}
+  
+
+  </div>
+</div>
 {% endblock content %}
