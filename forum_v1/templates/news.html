@@ -24,6 +24,8 @@
           </div>
         </div>
       </div>
-      {% if forloop.last %}<div style="height: 300px;"></div>{% endif %}
+      {% if forloop.last %}
+      {% include 'includes/paginator.html' %}</div>
+      {% endif %}
       {% endfor %}
 {% endblock content %}

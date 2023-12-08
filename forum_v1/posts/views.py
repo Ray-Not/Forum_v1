@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from .models import News
-from users.models import User
+from django.core.paginator import Paginator
 
 @require_http_methods(['GET'])
 def news_html(request):
-    # data = ['TYPE', 'TITLE', 'CONTENT', User.objects.get(id=1)]
-    # news_type, news_title, news_content, user_instance = data
-    # News.objects.create(type=news_type, title=news_title, content=news_content, author=user_instance)
     news_posts = News.objects.all().order_by('-date')
+    paginator = Paginator(news_posts, 3) 
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
-        'news': news_posts,
+        'news': page_obj,
         'request': request
     }
     return render(request, 'news.html', context=context)

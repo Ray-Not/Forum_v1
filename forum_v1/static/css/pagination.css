@@ -1,0 +1,18 @@
+/* Стили для активной страницы */
+.pagination .page-item.active .page-link {
+    background-color: #fff; /* Цвет фона для активной страницы */
+    border-color: #212529;
+    color: #212529; /* Цвет текста для активной страницы */
+}
+
+/* Стили для обычных кнопок */
+.pagination .page-item .page-link {
+    background-color: #212529; /* Цвет фона для обычных кнопок */
+    color: #ffc107; /* Цвет текста для обычных кнопок */
+}
+
+/* Стили для кнопок "предыдущая" и "следующая" */
+.pagination .page-item.disabled .page-link {
+    background-color: #212529; /* Цвет фона для отключенных кнопок */
+    color: #6c757d; /* Цвет текста для отключенных кнопок */
+}
