@@ -1,13 +1,13 @@
 {% load static %}
 <header style="background-color: rgba(0, 0, 0, 0.7);">
   <div class="row p-3 mx-auto">
-    <div class="col-md-4 col-xs-12 d-flex justify-content-center align-items-center">
+    <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
       <a href="/">
         <img src="{% static 'images/logo.png' %}" style="max-width: 200px; max-height: 200px;">
       </a>
     </div>
-    <div class="col-md-4 d-flex justify-content-center align-items-center">
-      <ul class="nav">
+    <div class="col-lg-4 col-sm-12 d-flex justify-content-center align-items-center">
+      <ul class="nav flex-lg-row flex-md-column flex-column text-center">
         <li><a href="{% url 'posts:news' %}" class="nav-link px-2 {% if request.path == '/news/' %}text-secondary{% else %}text-white{% endif %}">Новости</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Форум</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Донат</a></li>
@@ -15,7 +15,7 @@
         <li><a href="#" class="nav-link px-2 text-white">Статус сервера</a></li>
       </ul>
     </div>
-    <div class="col-md-4 col-xs-1 d-flex justify-content-center align-items-center">
+    <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
       {% if user.is_authorized %}
       <button type="button" class="btn btn-outline-light me-3">Профиль</button>
       <img src="{% static 'images/ava.jpeg' %}" style="max-width: 75px; max-height: 75px;">

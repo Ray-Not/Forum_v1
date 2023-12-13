@@ -18,9 +18,10 @@ def news_html(request):
 
 @require_http_methods(['GET'])
 def base_html(request):
-    user_agent = parse(request.META.get('HTTP_USER_AGENT', ''))
     
-    if user_agent.is_mobile:
-        return render(request, 'm_base.html')
-    else:
-        return render(request, 'base.html')
+    return render(request, 'base.html')
+    # user_agent = parse(request.META.get('HTTP_USER_AGENT', ''))
+    # if user_agent.is_mobile:
+    #     return render(request, 'm_base.html')
+    # else:
+    #     return render(request, 'base.html')

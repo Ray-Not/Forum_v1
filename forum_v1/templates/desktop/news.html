@@ -7,14 +7,14 @@
 
 {% block content %}
 <div class="container">
-  <div class="row m-4 d-flex justify-content-center align-items-center" style="position: relative;">
+  <div class="row m-4 d-flex justify-content-center">
     {% for new in news %}
-    <div class="col-3 p-3 m-2" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="col-lg-3 col-md-12 p-3 m-2" style="background-color: rgba(0, 0, 0, 0.7);">
       <div class="row d-flex justify-content-center align-items-center">
         <img src="{{ new.image.url }}" class="img-fluid" style="width: 300px; object-fit: cover;">
       </div>
-      <div class="row text-white d-flex p-2" style="height: 380px;">
-        <div class="mx-auto" style="font-family: noto-serif-bold, Georgia, serif; color: #dc005d; font-size: 20px;">
+      <div class="row text-white d-flex p-2">
+        <div class="text-center d-flex justify-content-center align-items-center text-wrap" style="font-family: noto-serif-bold, Georgia, serif; color: #dc005d; font-size: 20px;">
           {{ new.title }}
         </div>
         <div style="font-family: noto-sans-regular, Helvetica, sans-serif; font-size: 14px;">
