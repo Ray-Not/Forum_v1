@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from .models import News
 from django.core.paginator import Paginator
+from user_agents import parse
 
 @require_http_methods(['GET'])
 def news_html(request):
@@ -17,4 +18,9 @@ def news_html(request):
 
 @require_http_methods(['GET'])
 def base_html(request):
-    return render(request, 'base.html')
+    user_agent = parse(request.META.get('HTTP_USER_AGENT', ''))
+    
+    if user_agent.is_mobile:
+        return render(request, 'm_base.html')
+    else:
+        return render(request, 'base.html')
