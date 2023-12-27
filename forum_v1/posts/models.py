@@ -1,6 +1,8 @@
 from django.db import models
-from users.models import User
 from django.utils import timezone
+
+from users.models import User
+
 
 class News(models.Model):
     title = models.CharField(max_length=50)

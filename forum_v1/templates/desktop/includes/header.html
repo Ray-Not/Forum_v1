@@ -9,19 +9,27 @@
     <div class="col-lg-4 col-sm-12 d-flex justify-content-center align-items-center">
       <ul class="nav flex-lg-row flex-md-column flex-column text-center">
         <li><a href="{% url 'posts:news' %}" class="nav-link px-2 {% if request.path == '/news/' %}text-secondary{% else %}text-white{% endif %}">Новости</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Форум</a></li>
+        <li><a href="#" class="nav-link px-2 {% if request.path == '/forum/' %}text-secondary{% else %}text-white{% endif %}">Форум</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Донат</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Команда</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Статус сервера</a></li>
       </ul>
     </div>
     <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
-      {% if user.is_authorized %}
+      {% if request.user.is_authenticated %}
       <button type="button" class="btn btn-outline-light me-3">Профиль</button>
+      <form method="post" action="{% url 'users:logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-light me-2">Выйти</button>
+      </form>
       <img src="{% static 'images/ava.jpeg' %}" style="max-width: 75px; max-height: 75px;">
       {% else %}
+      <a href="{% url 'users:signin' %}">
       <button type="button" class="btn btn-outline-light me-2">Авторизация</button>
+      </a>
+      <a href="{% url 'users:signup' %}">
       <button type="button" class="btn btn-warning">Регистрация</button>
+      </a>
       {% endif %}
     </div>
   </div>

@@ -1,4 +1,4 @@
-Django==4.2.4
+Django
 python-dotenv
-pillow==10.1.0
+pillow
 django-user_agents

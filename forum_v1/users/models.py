@@ -3,8 +3,8 @@ from django.db import models
 
 
 class User(AbstractUser):
-    """Модель с дополнительным полем для подписок"""
     priv_status = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(null=False)
 
     def __str__(self):
         return self.username
