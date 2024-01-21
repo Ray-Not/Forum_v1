@@ -3,16 +3,16 @@
   <div class="row p-3 mx-auto">
     <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
       <a href="/">
-        <img src="{% static 'images/logo.png' %}" style="max-width: 200px; max-height: 200px;">
+        <img src="{% static 'images/icons/logo.svg' %}" style="max-width: 70px; max-height: 70px;">
       </a>
     </div>
     <div class="col-lg-4 col-sm-12 d-flex justify-content-center align-items-center">
       <ul class="nav flex-lg-row flex-md-column flex-column text-center">
-        <li><a href="{% url 'posts:news' %}" class="nav-link px-2 {% if request.path == '/news/' %}text-secondary{% else %}text-white{% endif %}">Новости</a></li>
-        <li><a href="#" class="nav-link px-2 {% if request.path == '/forum/' %}text-secondary{% else %}text-white{% endif %}">Форум</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Донат</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Команда</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Статус сервера</a></li>
+        <li><a href="{% url 'posts:news' %}" class="nav-link px-2 {% if request.path == '/news/' %}text-light bg-dark{% else %}text-dark{% endif %}">Новости</a></li>
+        <li><a href="#" class="nav-link px-2 {% if request.path == '/forum/' %}text-light bg-dark{% else %}text-dark{% endif %}">Форум</a></li>
+        <li><a href="#" class="nav-link px-2 text-dark">Донат</a></li>
+        <li><a href="#" class="nav-link px-2 text-dark">Команда</a></li>
+        <li><a href="#" class="nav-link px-2 text-dark">Статус сервера</a></li>
       </ul>
     </div>
     <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
@@ -29,10 +29,10 @@
       {% endif %}
       {% else %}
       <a href="{% url 'users:signin' %}">
-      <button type="button" class="btn btn-outline-light me-2">Авторизация</button>
+      <button type="button" class="btn btn-outline-dark me-2">Авторизация</button>
       </a>
       <a href="{% url 'users:signup' %}">
-      <button type="button" class="btn btn-warning">Регистрация</button>
+      <button type="button" class="btn btn-dark">Регистрация</button>
       </a>
       {% endif %}
     </div>

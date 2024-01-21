@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg width="320" height="320" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect fill="#0fffff" fill-opacity="0" height="300" id="svg_1" rx="10" stroke="#000" stroke-width="11" width="300" x="10" y="10"/>
+  <text fill="#000000" font-family="&#x27;Work Sans&#x27;" font-size="45" id="svg_2" stroke="#000" stroke-width="0" text-anchor="start" transform="matrix(1, 0, 0, 1, 0, 0)" x="60.09" xml:space="preserve" y="284.77">JailBreak</text>
+  <text fill="#000000" font-family="Sans-serif" font-size="200" font-style="normal" font-weight="normal" id="svg_5" stroke="#000000" text-anchor="middle" transform="matrix(1.35281, 0, 0, 1.08979, -14.3181, -5.40767)" x="102.24" xml:space="preserve" y="221.7">L</text>
+  <text fill="#000000" font-family="Sans-serif" font-size="203" id="svg_6" stroke="#000000" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0)" x="207" xml:space="preserve" y="197">D</text>
+ </g>
+
+</svg>
