@@ -11,6 +11,7 @@ class signup(CreateView):
     form_class = CreationForm
     success_url = reverse_lazy('posts:news')
     template_name = 'signup.html'
+    print(CreationForm)
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -20,6 +21,7 @@ class signup(CreateView):
         return response
 
 class signin(LoginView):
+    print(LoginView)
     template_name = 'signin.html'
     def get_success_url(self):
         return reverse_lazy('posts:news')

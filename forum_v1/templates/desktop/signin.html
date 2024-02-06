@@ -6,28 +6,14 @@
 {% endblock title %}
 
 {% block content %}
-<div class="row d-flex justify-content-center mt-5 mx-auto">
-  <div class="mb-2 col-lg-4 col-8" style="background-color: rgba(0, 0, 0, 0.7); position: relative;">
-    <img src="{% static 'images/tony.png' %}" class="img-fluid">
-  </div>
-</div>
-<div class="row d-flex justify-content-center mx-auto">
-  <div class="p-4 col-lg-4 col-8" style="background-color: rgba(0, 0, 0, 0.7); position: relative;">
-  {% for field in form %}
-    <div class="col m-3 d-flex justify-content-center text-white">
+<div class="row mx-auto d-flex justify-content-center" style="background-color: black;">
+  <div class="col-5 d-flex justify-content-center" style="background-color: yellow;">
+    {% for field in form %}
+    <div class="form-group">
       {{ field.label }}
-    </div>
-    <div class="col m-3 d-flex justify-content-center">
       {{ field }}
     </div>
-  {% endfor %}
-  </div>
-  <div class="row d-flex justify-content-center">
-    <div class="mt-2 mb-5 p-3 col-lg-2 col-4 d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.7);">
-      <button type="submit" class="btn btn-warning">
-        Вход
-      </button>
-    </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock content %}

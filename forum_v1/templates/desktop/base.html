@@ -6,6 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/text.css' %}">
+        <link rel="stylesheet" href="{% static 'css/image.css' %}">
         <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
         <link rel="icon" href="{% static 'images/fav/favicon.ico' %}" type="image/x-icon">
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav/apple-touch-icon.png' %}">
@@ -16,21 +18,26 @@
             Главная страница
             {% endblock title %}
         </title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                background: url() no-repeat center center fixed;
-                background-size: cover;
-            }
-          </style>
     </head>
 <body>
     {% include 'includes/header.html' %}
-    <div class="fixed-bottom" style="padding: 5px; border-radius: 5px; width: 40px;">
-        <a href="#" class="btn btn-dark btn-sm" onclick="scrollToTop();">&#8593;</a>
-    </div>
     {% block content %}
+    <div class="row mx-auto">
+        <p class="text-with-border">
+            О проекте
+            <img src="{% static 'images/icons/eye.svg' %}" style="width: 50px; height: 50px">
+        </p>
+    </div>
+    <div class="row d-flex justify-content-center">
+    <div class="col-6 text-white p-4 rounded-5" style="background-color: black;">
+        <p class="title-text-white">
+            Режим JailBreak
+        </p>
+        <p class="default-text-white">
+            &nbsp;&nbsp;&nbsp;&nbsp;Сервер безумные зомби Сервер безумные зомбиСервер безумные зомбиСервер безумные зомбиСервер безумные зомбиСервер безумные зомби
+        </p>
+    </div>
+</div>
     {% endblock content %}
 </body>
 </html>
