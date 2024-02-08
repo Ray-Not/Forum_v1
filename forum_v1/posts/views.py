@@ -1,9 +1,10 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-from user_agents import parse
+from django.views.decorators.cache import never_cache
 
 from .models import News
+from users.utils import get_top_players
 
 
 @require_http_methods(['GET'])
@@ -18,10 +19,16 @@ def news_html(request):
     }
     return render(request, 'news.html', context=context)
 
+@never_cache
 @require_http_methods(['GET'])
 def base_html(request):
-    
-    return render(request, 'base.html')
+    top_donater, top_gamer, top_liker = get_top_players()
+    context = {
+        'top_donater': top_donater,
+        'top_gamer': top_gamer,
+        'top_liker': top_liker,
+    }
+    return render(request, 'base.html', context)
     # user_agent = parse(request.META.get('HTTP_USER_AGENT', ''))
     # if user_agent.is_mobile:
     #     return render(request, 'm_base.html')

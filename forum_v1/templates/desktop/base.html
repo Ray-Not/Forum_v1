@@ -2,42 +2,148 @@
 
 <!DOCTYPE html>
 <html>
-    <head>    
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/text.css' %}">
-        <link rel="stylesheet" href="{% static 'css/image.css' %}">
-        <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
-        <link rel="icon" href="{% static 'images/fav/favicon.ico' %}" type="image/x-icon">
-        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav/apple-touch-icon.png' %}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/fav/favicon-32x32.png' %}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/fav/favicon-16x16.png' %}">
-        <title>
-            {% block title %}
-            Главная страница
-            {% endblock title %}
-        </title>
-    </head>
-<body>
+  <head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/text.css' %}">
+    <link rel="stylesheet" href="{% static 'css/image.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+    <link rel="icon" href="{% static 'images/fav/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/fav/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/fav/favicon-16x16.png' %}">
+    <title>
+      {% block title %}
+        Главная страница
+      {% endblock title %}
+    </title>
+  </head>
+  <body>
     {% include 'includes/header.html' %}
     {% block content %}
     <div class="row mx-auto">
-        <p class="text-with-border">
-            О проекте
-            <img src="{% static 'images/icons/eye.svg' %}" style="width: 50px; height: 50px">
-        </p>
+      <p class="text-with-border">
+        Топ игроков
+        <img src="{% static 'images/icons/statistics.svg' %}" style="width: 50px; height: 50px">
+      </p>
     </div>
-    <div class="row d-flex justify-content-center">
-    <div class="col-6 text-white p-4 rounded-5" style="background-color: black;">
+    <div class="row d-flex justify-content-center mx-auto">
+      <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12">
+            <p class="title-text-white">
+              Почетный
+            </p>
+            <div class="container mb-3">
+              <img src="{{ top_gamer.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
+            </div>
+            <p class="default-text-white text-center">
+              Игрок <span class="bg-warning text-dark p-1 rounded-3">{{ top_gamer.username }}</span> наиграл {{ top_gamer.time_played }} часов
+            </p>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <p class="title-text-white">
+              Шейх
+            </p>
+            <div class="container mb-3">
+              <img src="{{ top_donater.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
+            </div>
+            <p class="default-text-white text-center">
+              Игрок <span class="bg-danger text-dark p-1 rounded-3">{{ top_donater.username }}</span> задонатил {{ top_donater.donation }} рублей
+            </p>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <p class="title-text-white text-center">
+              Фейм
+            </p>
+            <div class="container mb-3">
+              <img src="{{ top_liker.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
+            </div>
+            <p class="default-text-white text-center">
+              Игрок <span class="bg-info text-dark p-1 rounded-3">{{ top_liker.username }}</span> набрал {{ top_liker.liked }} лайков
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} Скачать клиент {% endcomment %}
+    <div class="row mx-auto">
+      <p class="text-with-border">
+        Скачать клиент
+        <img src="{% static 'images/icons/download.svg' %}" style="width: 50px; height: 50px">
+      </p>
+      <div class="row d-flex justify-content-center mx-auto">
+        <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
+          <p class="title-text-white">
+            Чистый клиент cs 1.6
+          </p>
+          <div class="container mb-3">
+            <img src="{% static 'images/cs_logo.jpg' %}" class="img-fluid mb-3">
+          </div>
+          <p class="default-text-white text-center">
+            <a href="{% static 'files/cs16setup_rus.torrent' %}" download class="btn btn-primary pe-2" style="--bs-btn-padding-y: .2rem; --bs-btn-padding-x: .1rem; --bs-btn-font-size: 1.5rem;">
+              <img src="{% static 'images/icons/torrent.svg' %}"> Скачать
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% comment %} О сервере {% endcomment %}
+    <div class="row mx-auto">
+      <p class="text-with-border">
+        О сервере
+        <img src="{% static 'images/icons/eye.svg' %}" style="width: 50px; height: 50px">
+      </p>
+    </div>
+    <div class="row d-flex justify-content-center mx-auto">
+      <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
         <p class="title-text-white">
-            Режим JailBreak
+          Режим JailBreak
         </p>
         <p class="default-text-white">
-            &nbsp;&nbsp;&nbsp;&nbsp;Сервер безумные зомби Сервер безумные зомбиСервер безумные зомбиСервер безумные зомбиСервер безумные зомбиСервер безумные зомби
+          &nbsp;&nbsp;&nbsp;&nbsp;Все игроки делятся на 2 команды: сотрудники и заключенные. Игра делится на игровые недели,
+          первые 4 дня в основном являются обычными днями
+          и в эти дни проводятся события и мини-игры на выживание.
+          Цель заключенных - выжить. Последний заключенный имеет право на желание или соревнование (опционально).
+          Цель начальника - провести интересные мини-игры или события до последнего заключенного.
+          Цель охраны - защищать начальника тюрьмы. Также начальник может приказать выполнить какие-либо действия, которые охранник обязан выполнить.
         </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;По пятницам проводится свободный день, в этот день всем заключенным выдается свободное время для отдыха и изкчения
+          карты. Охрана и начальник все время проводят наблюдая за заключенными и оружейкой. В конце свободного дня наступает обычный день.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;С субботы по воскресенье включительно проводятся глобальные мини-игры, в это время команды следуют указаниям и весело проводят время.
+        </p>
+        <p class="text-center">
+          &nbsp;&nbsp;&nbsp;&nbsp;Более полную информацию можно получить в нашей группе&nbsp;
+          <a href="https://vk.com/lockdown_cs16" class="btn btn-primary pe-2" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .05rem; --bs-btn-font-size: 1rem;">
+            <img src="{% static 'images/icons/vk.svg' %}">Вконтакте
+          </a>
+        </p>
+        <p class="title-text-white">
+          Сервер LockDown
+        </p>
+        <p class="default-text-white">
+          &nbsp;&nbsp;&nbsp;&nbsp;Сервер начинает свое зарождение в далеком 2015, когда развитие серверов активно продолжалось,
+          многие близкие сердцу проекты закрывались, а хотелось стабильности и отзывчивости. Тогда в группе людей приходит идея
+          основать собственный сервер, однако реальность отличается от фантазий, сервер вскоре закрывается и начнется рассвет только в 2020 году:
+        </p>
+        <div class="container mb-3">
+          <img src="{% static 'images/2020online_server.jpg' %}" class="img-fluid">
+        </div>
+        <p class="default-text-white">
+          &nbsp;&nbsp;&nbsp;&nbsp;С тех времен захотелось собрать все с нуля: без багов, падений сервера, с самописными плагинами. Началась активная разработка
+          плагинов и все затянулось до 2024 года. Теперь все переосло на уровень повыше, знаний и опыта больше, поэтому мы надеемся, что сервер понравиться нашим
+          игрокам и будет дальше развиваться.
+        </p>
+        <p class="default-text-white">
+          &nbsp;&nbsp;&nbsp;&nbsp;Сервер позиционируется как любительский проект с целью личностного развития, а не как готовый бизнес или пассивное получение прибыли.
+          В перспективе разработка своей экосистемы с различными сервисами, которые будут объединять несколько игровых серверов. Следите за новостями в нашей группе Вконтакте
+        </p>
+      </div>
     </div>
-</div>
     {% endblock content %}
-</body>
+  </body>
 </html>
