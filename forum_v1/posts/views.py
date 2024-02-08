@@ -4,7 +4,7 @@ from django.views.decorators.http import require_http_methods
 from django.views.decorators.cache import never_cache
 
 from .models import News
-from users.utils import get_top_players
+from users.utils import get_top_players, get_server_data
 
 
 @require_http_methods(['GET'])
@@ -28,6 +28,8 @@ def base_html(request):
         'top_gamer': top_gamer,
         'top_liker': top_liker,
     }
+    get_server_data()
+    print(top_donater.donation, top_gamer.time_played, top_liker.liked)
     return render(request, 'base.html', context)
     # user_agent = parse(request.META.get('HTTP_USER_AGENT', ''))
     # if user_agent.is_mobile:

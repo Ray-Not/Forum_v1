@@ -1,5 +1,3 @@
-@import 'boostrap/scss/variables';
-
 .text-with-border {
     color: white; /* Белый цвет текста */
     font-size: 4rem; /* Размер текста */

@@ -2,3 +2,4 @@ Django
 python-dotenv
 pillow
 django-user_agents
+python-valve
