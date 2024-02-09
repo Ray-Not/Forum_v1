@@ -6,14 +6,47 @@
 {% endblock title %}
 
 {% block content %}
-<div class="row mx-auto d-flex justify-content-center" style="background-color: black;">
-  <div class="col-5 d-flex justify-content-center" style="background-color: yellow;">
-    {% for field in form %}
-    <div class="form-group">
-      {{ field.label }}
-      {{ field }}
-    </div>
-    {% endfor %}
+<div class="container mb-3 d-flex justify-content-center">
+  <img src="{% static 'images/icons/logo_dark.svg' %}" class="img-fluid" style="width: 200px">
+</div>
+<p class="title-text-black">
+  Личный кабинет | Вход
+</p>
+<div class="row d-flex justify-content-center mx-auto">
+  <div class="col-lg-4 col-sm-6 col-8 text-white p-4 rounded-2 bg-black">
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="row text-center">
+        <div class="col-12 mb-2">
+        {{ field.label }}
+        </div>
+        <div class="col-12 mb-4">
+            <input class="form-control"
+            type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}"
+            name="{{ field.html_name }}" {% if field.field.required %}required{% endif %}>
+        </div>
+        {% if not forloop.last %} <hr class="border border-light border-2 opacity-100 rounded"> {% endif %}
+      </div>
+      {% endfor %}
+      {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+          {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    {{ error }}
+                {% endfor %}
+            {% endfor %}
+        </div>      
+      {% endif %}
+      <div class="row">
+        <div class="col-12 text-center mt-2">
+          <button type="submit" class="btn btn-dark w-50">Войти</button>
+        </div>
+        <div class="col-12 text-center mt-2">
+          <p class="text-secondary">Не зарегистрованы? <a class="text-white" href="{% url 'users:signup' %}">Регистрация</a></p>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 {% endblock content %}

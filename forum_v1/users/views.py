@@ -9,7 +9,7 @@ from .forms import CreationForm
 
 class signup(CreateView):
     form_class = CreationForm
-    success_url = reverse_lazy('posts:news')
+    success_url = reverse_lazy('base')
     template_name = 'signup.html'
 
     def form_valid(self, form):
@@ -22,4 +22,4 @@ class signup(CreateView):
 class signin(LoginView):
     template_name = 'signin.html'
     def get_success_url(self):
-        return reverse_lazy('posts:news')
+        return reverse_lazy('base')

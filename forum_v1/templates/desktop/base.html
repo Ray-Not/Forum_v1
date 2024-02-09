@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/image.css' %}">
     <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
     <link rel="icon" href="{% static 'images/fav/favicon.ico' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/fav/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/fav/favicon-16x16.png' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <title>
       {% block title %}
         Главная страница
@@ -27,6 +25,50 @@
         Статус сервера
         <img src="{% static 'images/icons/controller.svg' %}" style="width: 50px; height: 50px">
       </p>
+    </div>
+    <div class="row d-flex justify-content-center mx-auto">
+      <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
+        {% if server_info %}
+          <p class="title-text-white">
+            {{ server_info.server_name }}
+          </p>
+          <p class="title-text-white">
+            Игроков: {{ server_info.player_count }} из {{ server_info.max_players }}
+          </p>
+          <p class="title-text-white">
+            Карта: {{ server_info.map_name }}
+          </p>
+          <div class="row">
+              <div class="container mb-3">
+                <img src="{{ top_liker.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
+              </div>
+          </div>
+          <div class="d-flex justify-content-center mx-auto">
+            {% if players_info %}
+            <button class="btn btn-light mb-3 mt-3 align-center" type="button" data-bs-toggle="collapse" data-bs-target="#show_players" aria-expanded="false" aria-controls="collapseExample">
+              Открыть список игроков
+            </button>
+            {% else %}
+            <button class="btn btn-light disabled mb-3 mt-3 align-center">
+              В данный момент никого нет
+            </button>
+            {% endif %}
+          </div>
+          <div class="collapse mx-auto" id="show_players" style="width: 40%;">
+            <div class="card card-body text-black text-center">
+              {% for player in players_info %} {{ player.name }} {% if not forloop.last %} <hr> {% endif %} {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <p class="text-with-border">
+            Сервер не работает
+            <img src="{% static 'images/icons/sad_smile.svg' %}" style="width: 50px; height: 50px">
+          </p>
+          <p class="default-text-white text-center">
+            Ошибка - {{ traceback }}. Обратитесь с администратору.
+          </p>
+        {% endif %}
+      </div>
     </div>
     <div class="row mx-auto">
       <p class="text-with-border">
@@ -56,7 +98,7 @@
               <img src="{{ top_donater.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
             </div>
             <p class="default-text-white text-center">
-              Игрок <span class="bg-light text-dark p-1">{{ top_donater.username }}</span> задонатил {{ top_donater.donation }} рублей
+              Игрок <span class="bg-light text-dark p-1">{{ top_donater.username }}</span> внес {{ top_donater.donation }} рублей
             </p>
           </div>
           <div class="col-lg-4 col-sm-12">
@@ -70,6 +112,10 @@
               Игрок <span class="bg-light text-dark p-1">{{ top_liker.username }}</span> набрал {{ top_liker.liked }} лайков
             </p>
           </div>
+          <div class="col-12">
+          <span class="text-dark bg-light rounded-3 ps-2 pe-2">
+            *Данные обновляются с задержкой в 1 час
+          </span>
         </div>
       </div>
     </div>
@@ -89,7 +135,7 @@
           <img src="{% static 'images/cs_logo.jpg' %}" class="img-fluid mb-3">
         </div>
         <p class="default-text-white text-center">
-          <a href="{% static 'files/cs16setup_rus.torrent' %}" download class="btn btn-primary pe-2" style="--bs-btn-padding-y: .2rem; --bs-btn-padding-x: .1rem; --bs-btn-font-size: 1.5rem;">
+          <a href="{% static 'files/cs16setup_rus.torrent' %}" download class="btn btn-success pe-2" style="--bs-btn-padding-y: .2rem; --bs-btn-padding-x: .1rem; --bs-btn-font-size: 1.5rem;">
             <img src="{% static 'images/icons/torrent.svg' %}"> Скачать
           </a>
         </p>

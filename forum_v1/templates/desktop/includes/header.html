@@ -16,10 +16,10 @@
     </div>
     <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
       {% if request.user.is_authenticated %}
-      <button type="button" class="btn btn-outline-light me-3">Профиль</button>
+      <button type="button" class="btn btn-outline-dark me-3">Профиль</button>
       <form method="post" action="{% url 'users:logout' %}">
         {% csrf_token %}
-        <button type="submit" class="btn btn-outline-light me-2">Выйти</button>
+        <button type="submit" class="btn btn-dark me-2">Выйти</button>
       </form>
       {% if request.user.image %}
         <img src="{{ request.user.image.url }}" style="max-width: 75px; max-height: 75px;">

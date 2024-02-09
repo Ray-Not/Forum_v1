@@ -18,3 +18,9 @@
     text-align: center; /* Выравнивание текста по центру */
 }
 
+.title-text-black {
+    color: black; /* Белый цвет текста */
+    font-size: 2rem; /* Размер текста */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
