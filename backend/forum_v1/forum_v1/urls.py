@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.base_html, name='base'),
     path('', include('posts.urls')),
     path('', include('users.urls')),
+    path('api/server/', include('server.urls')),
 ]
 
 if settings.DEBUG:
