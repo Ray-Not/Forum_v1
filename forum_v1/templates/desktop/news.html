@@ -7,22 +7,19 @@
 
 {% block content %}
 <div class="container">
-  <div class="row m-4 d-flex justify-content-center">
-    {% for new in news %}
-    <div class="col-lg-3 col-md-12 p-3 m-2" style="background-color: rgba(0, 0, 0, 0.7);">
-      <div class="row d-flex justify-content-center align-items-center">
-        <img src="{{ new.image.url }}" class="img-fluid" style="width: 300px; object-fit: cover;">
-      </div>
-      <div class="row text-white d-flex p-2">
-        <div class="text-center d-flex justify-content-center align-items-center text-wrap" style="font-family: noto-serif-bold, Georgia, serif; color: #dc005d; font-size: 20px;">
+  <div class="row d-flex justify-content-center mx-auto">
+    <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
+      {% for new in news %}
+        <p class="default-text-white text-center">
           {{ new.title }}
+        </p>
+        <div class="container mb-3">
+          <img src="{{ new.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 400px; height: 400px;">
         </div>
-        <div style="font-family: noto-sans-regular, Helvetica, sans-serif; font-size: 14px;">
+        <p class="default-text-white text-center">
           {{ new.content }}
-        </div>
-      </div>
-    </div>
-    {% if forloop.last %}
+        </p>
+      {% if forloop.last %} 
       {% include 'includes/paginator.html' %}
       {% endif %}
   {% endfor %}

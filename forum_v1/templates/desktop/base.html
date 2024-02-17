@@ -22,11 +22,18 @@
     {% block content %}
     <div class="row mx-auto">
       <p class="text-with-border">
-        Статус сервера
+        Играй с нами!
         <img src="{% static 'images/icons/controller.svg' %}" style="width: 50px; height: 50px">
       </p>
     </div>
     <div class="row d-flex justify-content-center mx-auto">
+      <div class="row d-flex justify-content-center mx-auto">
+        <div class="col-3 text-black p-4 d-grid gap-2" style="background-color: white;">
+          <button class="btn btn-outline-dark" type="button">
+          JailBreak
+          </button>
+        </div>
+      </div>
       <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
         {% if server_info %}
           <p class="title-text-white">
@@ -40,7 +47,7 @@
           </p>
           <div class="row">
               <div class="container mb-3">
-                <img src="{{ top_liker.image.url }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
+                <img src="{{ map_dir }}" class="img-fluid mb-3 mx-auto d-block" style="widht: 200px; height: 200px;">
               </div>
           </div>
           <div class="d-flex justify-content-center mx-auto">
@@ -119,30 +126,32 @@
         </div>
       </div>
     </div>
-    {% comment %} Скачать клиент {% endcomment %}
-    <div class="row mx-auto">
-      <p class="text-with-border">
-        Скачать клиент
-        <img src="{% static 'images/icons/download.svg' %}" style="width: 50px; height: 50px">
-      </p>
-    </div>
-    <div class="row d-flex justify-content-center mx-auto">
-      <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
-        <p class="title-text-white">
-          Чистый клиент cs 1.6
-        </p>
-        <div class="container mb-3">
-          <img src="{% static 'images/cs_logo.jpg' %}" class="img-fluid mb-3">
-        </div>
-        <p class="default-text-white text-center">
-          <a href="{% static 'files/cs16setup_rus.torrent' %}" download class="btn btn-success pe-2" style="--bs-btn-padding-y: .2rem; --bs-btn-padding-x: .1rem; --bs-btn-font-size: 1.5rem;">
-            <img src="{% static 'images/icons/torrent.svg' %}"> Скачать
-          </a>
+    {% comment %} Скачать клиент {% endcomment %}{% comment %}
+      
+      <div class="row mx-auto">
+        <p class="text-with-border">
+          Скачать клиент
+          <img src="{% static 'images/icons/download.svg' %}" style="width: 50px; height: 50px">
         </p>
       </div>
-    </div>
+      <div class="row d-flex justify-content-center mx-auto">
+        <div class="col-8 text-white p-4 rounded-5" style="background-color: black;">
+          <p class="title-text-white">
+            Чистый клиент cs 1.6
+          </p>
+          <div class="container mb-3">
+            <img src="{% static 'images/cs_logo.jpg' %}" class="img-fluid mb-3">
+          </div>
+          <p class="default-text-white text-center">
+            <a href="{% static 'files/cs16setup_rus.torrent' %}" download class="btn btn-success pe-2" style="--bs-btn-padding-y: .2rem; --bs-btn-padding-x: .1rem; --bs-btn-font-size: 1.5rem;">
+              <img src="{% static 'images/icons/torrent.svg' %}"> Скачать
+            </a>
+          </p>
+        </div>
+      </div>
+    {% endcomment %}
     {% comment %} О сервере {% endcomment %}
-    <div class="row mx-auto">
+    {% comment %} <div class="row mx-auto">
       <p class="text-with-border">
         О сервере
         <img src="{% static 'images/icons/eye.svg' %}" style="width: 50px; height: 50px">
@@ -195,7 +204,7 @@
           В перспективе разработка своей экосистемы с различными сервисами, которые будут объединять несколько игровых серверов. Следите за новостями в нашей группе Вконтакте
         </p>
       </div>
-    </div>
+    </div> {% endcomment %}
     {% endblock content %}
   </body>
 </html>

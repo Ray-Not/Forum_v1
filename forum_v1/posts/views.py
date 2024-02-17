@@ -4,7 +4,7 @@ from django.views.decorators.http import require_http_methods
 from django.views.decorators.cache import cache_page
 
 from .models import News
-from users.utils import get_top_players, get_server_data
+from users.utils import get_top_players, get_server_data, get_map_dir
 
 
 @require_http_methods(['GET'])
@@ -23,18 +23,15 @@ def news_html(request):
 @require_http_methods(['GET'])
 def base_html(request):
     top_donater, top_gamer, top_liker = get_top_players()
-    server_info, players_info, traceback = get_server_data()
+    server_info, players_info, traceback = get_server_data('46.174.50.10', 27237)
+    map_dir = get_map_dir(server_info)
     context = {
         'top_donater': top_donater,
         'top_gamer': top_gamer,
         'top_liker': top_liker,
         'server_info': server_info,
         'players_info': players_info,
-        'traceback': traceback
+        'traceback': traceback,
+        'map_dir': map_dir
     }
     return render(request, 'base.html', context)
-    # user_agent = parse(request.META.get('HTTP_USER_AGENT', ''))
-    # if user_agent.is_mobile:
-    #     return render(request, 'm_base.html')
-    # else:
-    #     return render(request, 'base.html')

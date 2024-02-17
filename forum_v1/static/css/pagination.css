@@ -5,8 +5,8 @@
 
 .pagination .page-item .page-link {
     background-color: #212529; /* Цвет фона для обычных кнопок */
-    color: #ffc107; /* Цвет текста для обычных кнопок */
-    border-color: #ffffff; /* Цвет обводки всего контура */
+    color: #fff; /* Цвет текста для обычных кнопок */
+    border-color: #000; /* Цвет обводки всего контура */
 }
 
 .pagination .page-item.disabled .page-link {
