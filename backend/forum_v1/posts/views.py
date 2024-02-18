@@ -2,7 +2,6 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
 from django.views.decorators.http import require_http_methods
-
 from users.utils import get_map_dir, get_server_data, get_top_players
 
 from .models import News

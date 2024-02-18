@@ -1,0 +1,26 @@
+.text-with-border {
+    color: white; /* Белый цвет текста */
+    font-size: 4rem; /* Размер текста */
+    text-align: center; /* Выравнивание текста по центру */
+    -webkit-text-stroke: 2px black; /* Черная обводка */
+    text-stroke: 2px black;
+    display: block; /* Принудительное отображение текста как блока */
+}
+
+.default-text-white {
+    color: white; /* Белый цвет текста */
+    font-size: 1rem; /* Размер текста */
+}
+
+.title-text-white {
+    color: white; /* Белый цвет текста */
+    font-size: 2rem; /* Размер текста */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.title-text-black {
+    color: black; /* Белый цвет текста */
+    font-size: 2rem; /* Размер текста */
+    text-align: center; /* Выравнивание текста по центру */
+}
+

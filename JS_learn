@@ -1,0 +1,26 @@
+// if (condition) {
+//     some;
+// }
+
+// for (let s; s < 20; s++) {
+//     semewhat;
+// }
+
+// while (condition) {
+//     condition -> do;
+// }
+
+// do {
+//     do -> condition;
+// } while (condition);
+
+// switch (condition) {
+//     case some:
+//         somewhat;
+//     default:
+//         somewhat;
+// }
+
+// function func_name() {
+//     return somewhat;
+// }

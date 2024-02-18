@@ -1,6 +1,6 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 
-from .serializer import UserSerializer, PlayerSerializer, ServerInfoSerializer
+from .serializer import PlayerSerializer, ServerInfoSerializer, UserSerializer
 from .utils import get_map_dir, get_server_data, get_top_players
 
 

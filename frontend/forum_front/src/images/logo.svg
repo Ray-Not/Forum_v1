@@ -1,0 +1,14 @@
+<svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect y="10" x="10" width="300" stroke-width="11" stroke="#000" rx="10" id="svg_1" height="300" fill-opacity="0" fill="#0fffff"/>
+  <text y="284.77" xml:space="preserve" x="69.21216" text-anchor="start" stroke-width="0" stroke="#000" id="svg_2" font-size="45" font-family="Helvetica, Arial, sans-serif" fill="#000000">JailBreak</text>
+  <text y="221.7" xml:space="preserve" x="102.24" transform="matrix(1.3528099999999998,0,0,1.08979,-14.3181,-9.40767) " text-anchor="middle" stroke="#000000" id="svg_5" font-weight="normal" font-style="normal" font-size="200" font-family="Helvetica, Arial, sans-serif" fill="#000000">L</text>
+  <text y="198" xml:space="preserve" x="211" text-anchor="middle" stroke="#000000" id="svg_6" font-size="203" font-family="Helvetica, Arial, sans-serif" fill="#000000">D</text>
+ </g>
+</svg>

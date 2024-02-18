@@ -3,7 +3,6 @@ from pathlib import Path
 
 import a2s
 from django.conf import settings
-
 from users.models import User
 
 
