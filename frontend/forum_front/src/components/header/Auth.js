@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserMenu({ isAuthenticated, userImage }) {
+function UserMenu() {
   return (
     <div className="col-lg-4 col-md-12 d-flex justify-content-center align-items-center">
       <button type="button" className="btn btn-outline-dark me-2">Авторизация</button>

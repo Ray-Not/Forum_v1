@@ -1,0 +1,14 @@
+<svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>background</title>
+  <rect fill="none" height="602" id="canvas_background" width="802" x="-1" y="-1"/>
+ </g>
+
+ <g class="layer">
+  <title>Layer 1</title>
+  <ellipse cx="160" cy="160" fill="#000000" id="svg_1" rx="100" ry="100" stroke="#000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null"/>
+  <text fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="213" id="svg_6" stroke="#000000" text-anchor="middle" transform="matrix(1, 0, 0, 1, 0, 0) matrix(0.754406, 0, 0, 0.804342, 34.3115, 9.74033)" x="212.85" xml:space="preserve" y="268.18">D</text>
+  <text fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="190" font-style="normal" font-weight="normal" id="svg_5" stroke="#000000" text-anchor="middle" transform="matrix(1.19716, 0, 0, 0.983297, -8.55503, -0.230709)" x="119.65" xml:space="preserve" y="179.97">L</text>
+  <path d="m103.85,198.35l13.24,-12.29l13.24,12.29l-13.24,12.29l-13.24,-12.29zm-14.91,13.91l13.24,-12.29l13.24,12.29l-13.24,12.29l-13.24,-12.29zm30.1,0.25l13.24,-12.28l13.24,12.28l-13.24,12.29l-13.24,-12.29zm-14.9,13.92l13.24,-12.29l13.24,12.29l-13.24,12.29l-13.24,-12.29z" fill="#000000" id="svg_7" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"/>
+ </g>
+</svg>

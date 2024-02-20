@@ -6,7 +6,7 @@ import Auth from './Auth';
 function Header() {
   return (
     <header>
-      <div className="row p-3 mx-auto">
+      <div className="row p-3 mx-auto bg-light">
         <Logo />
         <Navigation />
         <Auth />
