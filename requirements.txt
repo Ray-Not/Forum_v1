@@ -4,3 +4,6 @@ pillow
 django-user_agents
 python-a2s
 djangorestframework
+djoser
+djangorestframework-simplejwt==5.2.2
+django-cors-headers
