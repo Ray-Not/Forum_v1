@@ -27,7 +27,7 @@ function SignIn() {
 		},
 		sendDataToBackend: async (formData) => {
 			try {
-				const response = await axios.post('http://localhost:8000/user/create/', formData);
+				await axios.post('http://localhost:8000/user/auth/', formData);
 				alert('ok');
 			} catch (error) {
 				error.response ? alert(JSON.stringify(error.response.data)) : alert('Доступ к бэку упал');

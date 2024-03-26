@@ -9,6 +9,8 @@ function Form(props) {
 		{
 			username: '',
 			password: '',
+			password1: '',
+			password2: '',
 		}
 	)
 	

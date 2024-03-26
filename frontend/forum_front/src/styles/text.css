@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'nyashsans';
+    src: url('../fonts/nyashasans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'alumnisans';
+    src: url('../fonts/AlumniSansPinstripe-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ramona';
+    src: url('../fonts/Ramona.ttf') format('truetype');
+}
+
 .text-with-border {
     color: white; /* Белый цвет текста */
     font-size: 4rem; /* Размер текста */

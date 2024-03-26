@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost').split(', ')
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -143,7 +143,6 @@ DJOSER = {
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

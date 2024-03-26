@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 
 import a2s
 from django.conf import settings
@@ -21,11 +20,9 @@ def get_server_data(ip, port):
 
 def get_map_dir(server_name):
     if not server_name:
-        return None
-    images_dir = os.path.join(settings.STATIC_ROOT, 'images/maps/')
-    image_path = os.path.join(images_dir, server_name.map_name + '.jpg')
-    BASE_DIR = Path(__file__).resolve().parent.parent
-    if os.path.exists(os.path.join(BASE_DIR, image_path)):
+        return 'path/not_found'
+    image_path = ''.join(['.', settings.STATIC_URL, 'images/', 'maps/', server_name.map_name, '.jpg'])
+    if os.path.exists(image_path):
         return image_path
     else:
-        return os.path.join(settings.STATIC_URL, 'images/maps/default.jpg')
+        return ''.join(['.', settings.STATIC_URL, 'images/', 'maps/', 'default.jpg'])

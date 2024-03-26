@@ -6,3 +6,4 @@ urlpatterns = [
     path('user/create/', UserViewSet.as_view({'post': 'create'})),
     path('', include('djoser.urls.jwt')),
 ]
+ 
