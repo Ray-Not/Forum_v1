@@ -35,8 +35,8 @@ class SignUpForm extends React.Component {
 	render() {
 		const formFields = [
 			{ label: 'Имя пользователя', id: 'login', inputType: 'text', required: true },
-			{ label: 'Пароль', id: 'pass', inputType: 'password', required: true },
-			{ label: 'Подтверждение пароля', id: 'repass', inputType: 'password', required: true },
+			{ label: 'Пароль', id: 'pass', inputType: 'password1', required: true },
+			{ label: 'Подтверждение пароля', id: 'repass', inputType: 'password2', required: true },
 		];
 		return (
 			<div className="row d-flex justify-content-center mx-auto">
